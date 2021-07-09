@@ -1,9 +1,28 @@
-import "./App.css";
+import "./App.scss";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faListAlt } from "@fortawesome/free-solid-svg-icons";
+import Header from "./components/Header";
+import { useState } from "react";
+import Form from "./components/Form";
+import Tasks from "./components/Tasks";
+
+library.add(faListAlt);
 
 function App() {
+  const [input, setInput] = useState("");
+  const [tasks, setTasks] = useState([]);
+
   return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
+    <div className="App">
+      <Header />
+      <Tasks tasks={tasks} />
+
+      <Form
+        imput={input}
+        setInput={setInput}
+        tasks={tasks}
+        setTasks={setTasks}
+      />
     </div>
   );
 }
