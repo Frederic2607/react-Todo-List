@@ -16,17 +16,20 @@ const Form = (props) => {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit}>
         <input
+          className="input"
           type="text"
           placeholder="New Task"
           value={input}
           onChange={handleTaskChange}
         />
-        <button type="submit">Add task</button>
+        <button type="submit" className="submit-btn">
+          Add task
+        </button>
       </form>
-    </div>
+    </>
   );
 };
 
