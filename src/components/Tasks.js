@@ -4,11 +4,11 @@ const Tasks = (props) => {
   const { tasks } = props;
 
   return (
-    <div>
-      <ul>
-        <li>{tasks}</li>
-      </ul>
-    </div>
+    <ul>
+      {tasks.map((task, index) => {
+        return <li index={index}>{task}</li>;
+      })}
+    </ul>
   );
 };
 

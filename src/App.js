@@ -15,14 +15,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Tasks tasks={tasks} />
 
       <Form
-        imput={input}
+        input={input}
         setInput={setInput}
         tasks={tasks}
         setTasks={setTasks}
       />
+      <div>
+        <Tasks tasks={tasks} />
+      </div>
     </div>
   );
 }
