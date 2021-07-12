@@ -23,8 +23,9 @@ function App() {
           tasks={tasks}
           setTasks={setTasks}
         />
-
-        <Tasks className="tasks" tasks={tasks} />
+        {tasks.map((task, index) => {
+          return <Tasks className="tasks" task={task} index={index} />;
+        })}
       </main>
     </div>
   );

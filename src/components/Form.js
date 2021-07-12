@@ -13,6 +13,7 @@ const Form = (props) => {
     let newTask = [...tasks];
     newTask.push(input);
     setTasks(newTask);
+    setInput("");
   };
 
   return (

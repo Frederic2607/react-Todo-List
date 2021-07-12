@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const Tasks = (props) => {
-  const { tasks } = props;
+  const { task, index } = props;
 
   const [isChecked, setIsChecked] = useState(false);
 
@@ -13,20 +13,12 @@ const Tasks = (props) => {
 
   return (
     <ul className="task">
-      {tasks.map((task, index) => {
-        return (
-          <li key={index}>
-            <input
-              type="checkbox"
-              checked={isChecked}
-              onChange={handleCheckBox}
-            />
-            <span className={isChecked ? "checked" : ""}>{task}</span>
+      <li key={index}>
+        <input type="checkbox" checked={isChecked} onChange={handleCheckBox} />
+        <span className={isChecked ? "checked" : ""}>{task}</span>
 
-            <FontAwesomeIcon icon="trash-alt" size="1x" />
-          </li>
-        );
-      })}
+        <FontAwesomeIcon icon="trash-alt" size="1x" className="trash" />
+      </li>
     </ul>
   );
 };
